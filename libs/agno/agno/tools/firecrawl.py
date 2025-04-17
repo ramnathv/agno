@@ -17,22 +17,22 @@ class FirecrawlTools(Toolkit):
     Args:
         api_key (Optional[str]): The API key to use for the Firecrawl app.
         formats (Optional[List[str]]): The formats to use for the Firecrawl app.
+        actions (Optional[List[dict]]): Actions to use for the Firecrawl app.
         limit (int): The maximum number of pages to crawl.
         scrape (bool): Whether to scrape the website.
         crawl (bool): Whether to crawl the website.
         api_url (Optional[str]): The API URL to use for the Firecrawl app.
-        actions (Optional[List[dict]]): Actions to use for the Firecrawl app.
     """
 
     def __init__(
         self,
         api_key: Optional[str] = None,
         formats: Optional[List[str]] = None,
+        actions: Optional[List[dict]] = None,
         limit: int = 10,
         scrape: bool = True,
         crawl: bool = False,
         api_url: Optional[str] = "https://api.firecrawl.dev",
-        actions: Optional[List[dict]],
         **kwargs,
     ):
         super().__init__(name="firecrawl_tools", **kwargs)
