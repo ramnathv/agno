@@ -32,6 +32,7 @@ class FirecrawlTools(Toolkit):
         scrape: bool = True,
         crawl: bool = False,
         api_url: Optional[str] = "https://api.firecrawl.dev",
+        actions: Optional[List[dict]],
         **kwargs,
     ):
         super().__init__(name="firecrawl_tools", **kwargs)
