@@ -21,6 +21,7 @@ class FirecrawlTools(Toolkit):
         scrape (bool): Whether to scrape the website.
         crawl (bool): Whether to crawl the website.
         api_url (Optional[str]): The API URL to use for the Firecrawl app.
+        actions (Optional[List[dict]]): Actions to use for the Firecrawl app.
     """
 
     def __init__(
@@ -69,6 +70,9 @@ class FirecrawlTools(Toolkit):
         params = {}
         if self.formats:
             params["formats"] = self.formats
+
+        if self.actions:
+            params["actions"] = self.actions
 
         scrape_result = self.app.scrape_url(url, params=params)
         return json.dumps(scrape_result)
